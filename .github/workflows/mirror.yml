@@ -14,19 +14,22 @@ jobs:
         include:
           - image: alpine
             repo: docker.io
-            platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+            platforms: linux/amd64,linux/arm64/v8,linux/arm/v6,linux/arm/v7
           - image: mariadb
             repo: docker.io
             platforms: linux/amd64,linux/arm64/v8
           - image: postgres
             repo: docker.io
-            platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+            platforms: linux/amd64,linux/arm64/v8,linux/arm/v6,linux/arm/v7
           - image: docker
             repo: docker.io
             platforms: linux/amd64,linux/arm64/v8
           - image: traefik
             repo: docker.io
-            platforms: linux/amd64,linux/arm64/v8
+            platforms: linux/amd64,linux/arm64/v8,linux/arm/v6
+          - image: redis
+            repo: docker.io
+            platforms: linux/amd64,linux/arm64/v8,linux/arm/v5,linux/arm/v7
 
     steps:
       - uses: actions/checkout@v3
