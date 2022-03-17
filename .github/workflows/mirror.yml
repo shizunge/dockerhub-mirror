@@ -24,6 +24,9 @@ jobs:
           - image: docker
             repo: docker.io
             platforms: linux/amd64,linux/arm64/v8
+          - image: traefik
+            repo: docker.io
+            platforms: linux/amd64,linux/arm64/v8
 
     steps:
       - uses: actions/checkout@v3
