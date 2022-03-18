@@ -1,0 +1,6 @@
+.git
+.github
+.editorconfig
+.gitignore
+*.md
+images/*
