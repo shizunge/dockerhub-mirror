@@ -1,0 +1,33 @@
+name: Mirror Dockerhub
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  clean-ghcr:
+    name: Delete old container images
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - image: alpine
+          - image: docker
+          - image: nextcloud
+          - image: mariadb
+          - image: postgres
+          - image: redis
+          - image: traefik
+    steps:
+      - name: Delete untagged images
+        uses: snok/container-retention-policy@v2
+        with:
+          image-names: ${{ matrix.image }}
+          cut-off: One hour ago UTC
+          account-type: personal
+          token: ${{ secrets.TOKEN_DELETE_GHCR_IMAGES }}
+          keep-at-least: 0
+          untagged-only: True
+          skip-tags: latest
+          dry-run: False
