@@ -24,7 +24,7 @@ jobs:
         uses: snok/container-retention-policy@v2
         with:
           image-names: ${{ matrix.image }}
-          cut-off: One month ago UTC
+          cut-off: One year ago UTC
           account-type: personal
           token: ${{ secrets.TOKEN_DELETE_GHCR_IMAGES }}
           keep-at-least: 0
