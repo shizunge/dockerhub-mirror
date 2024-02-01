@@ -3,7 +3,7 @@ name: Mirror Dockerhub
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: '2 1 * * 0'
 
 jobs:
   mirror:
