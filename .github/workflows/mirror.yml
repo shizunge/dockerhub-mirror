@@ -24,8 +24,6 @@ jobs:
             repo: docker.io
           - image: redis
             repo: docker.io
-          - image: traefik
-            repo: docker.io
     permissions:
       contents: read
       packages: write
