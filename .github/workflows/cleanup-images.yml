@@ -13,6 +13,7 @@ jobs:
       matrix:
         include:
           - image: alpine
+          - image: couchdb
           - image: docker
           - image: nextcloud
           - image: mariadb

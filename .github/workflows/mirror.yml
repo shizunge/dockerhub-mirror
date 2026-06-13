@@ -14,6 +14,8 @@ jobs:
         include:
           - image: alpine
             repo: docker.io
+          - image: couchdb
+            repo: docker.io
           - image: docker
             repo: docker.io
           - image: nextcloud
